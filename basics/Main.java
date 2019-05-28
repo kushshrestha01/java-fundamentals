@@ -45,10 +45,7 @@ public class Main {
     int initialSecond = 0;
     while(true){
       LocalDateTime now = LocalDateTime.now();
-      // int hour = now.getHour();
-      // int minute = now.getMinute();
       int currentSecond = now.getSecond();
-      // or, if you're feeling fancy
       String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
       if(initialSecond != currentSecond){
         System.out.println(time);
