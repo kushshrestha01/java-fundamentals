@@ -5,4 +5,4 @@ The basics directory has a Main.java file that contains Pluralize, Flipping Coin
 
 ## 2. Basics library directory
 ### Table of Content
-1. Lab 2: Arrays, Loops, Imports, ArrayLists
+Lab 2: Arrays, Loops, Imports, ArrayLists
