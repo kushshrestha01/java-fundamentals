@@ -1,4 +1,5 @@
 # Lab 02: Arrays, for loops, imports, ArrayLists
+This lab consists of different ways of manupluating array.
 
 ## Rolling Dice
 A method called roll that accepts an integer n and rolls a six-sided dice n times and returns an array containing the values of the rolls.
