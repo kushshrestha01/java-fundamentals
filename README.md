@@ -7,5 +7,5 @@ The basics directory has a Main.java file that contains Pluralize, Flipping Coin
 ### Table of Content
 [Lab 2: Arrays, Loops, Imports, ArrayLists](basiclibrary/README/lab02.md)
 
-[Lab 3: Maps, File I/O, and Testing](linter.README.md)
+[Lab 3: Maps, File I/O, and Testing](linter/README.md)
 
