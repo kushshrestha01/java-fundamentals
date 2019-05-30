@@ -3,6 +3,8 @@
  */
 package basiclibrary;
 
+import java.util.*;
+
 public class Library {
     public boolean someLibraryMethod() {
         return true;
@@ -62,5 +64,42 @@ public class Library {
         }
         return resultArray;
 
+    }
+
+    public HashSet<Integer> weatherData(int[][] inputArr) {
+        HashSet<Integer> array = new HashSet<>();
+        HashSet<Integer> result = new HashSet<>();
+        for(int i = 0; i < inputArr.length; i++) {
+            for(int j = 0; j < inputArr[i].length; j++) {
+                array.add(inputArr[i][j]);
+            }
+        }
+        int max = Collections.max(array);
+        int min = Collections.min(array);
+        result.add(max);
+        result.add(min);
+
+        for(int i = min+1; i < max - 1; i++){
+            if(!array.contains(i)) {
+                result.add(i);
+            }
+        }
+        return result;
+    }
+
+    public String tally(ArrayList<String> list) {
+        HashMap<String, Integer> characterCounts = new HashMap<>();
+        String[] characters = new String[]{"Bush", "Shrub", "Hedge"};
+        for (String c : characters) {
+            characterCounts.put(c, 0);
+        }
+        for(String character : list) {
+            if(list.contains(character)) {
+                int countSoFar = characterCounts.get(character);
+                characterCounts.put(character, countSoFar + 1);
+            }
+        }
+        String result =Collections.max(characterCounts.entrySet(), Map.Entry.comparingByValue()).getKey();
+        return result;
     }
 }
