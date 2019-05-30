@@ -16,7 +16,6 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
-        System.out.println(readJavaScript("src/main/resources/gates.js"));
 
     }
 
@@ -30,8 +29,8 @@ public class App {
             while (sc.hasNextLine()) {
                 index++;
                 line = sc.nextLine();
-                if(!line.endsWith(";") && !line.endsWith("{") && !line.endsWith("}") && !line.endsWith("if")
-                        && !line.endsWith("else") && !line.isEmpty() ) {
+                if(!line.endsWith(";") && !line.endsWith("{") && !line.endsWith("}") && !line.contains("if")
+                        && !line.contains("else") && !line.isEmpty() ) {
                     System.out.println("line " + index +" is missing semicolon");
                     missingSemicolon++;
                 }

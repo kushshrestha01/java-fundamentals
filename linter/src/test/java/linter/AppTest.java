@@ -15,7 +15,64 @@ public class AppTest {
 
     @Test
     public void testReadJavaScript() {
-        int expectedOutput = 50;
+        App classUnderTest = new App();
+        String path = "src/main/resources/gates.js";
+        int expectedOutput = 46;
+        assertEquals("Checking gates.js ",
+                expectedOutput,
+                classUnderTest.readJavaScript(path));
 
     }
+
+    @Test
+    public void testManyErrors() {
+        App classUnderTest = new App();
+        String path = "src/main/resources/manyErrors.js";
+        int expectedOutput = 19;
+        assertEquals("Checking many errors ",
+                expectedOutput,
+                classUnderTest.readJavaScript(path));
+    }
+
+    @Test
+    public void testEmptyFile() {
+        App classUnderTest = new App();
+        String path = "src/main/resources/emptyFile.js";
+        int expectedOutput = 0;
+        assertEquals("Checking empty file ",
+                expectedOutput,
+                classUnderTest.readJavaScript(path));
+    }
+
+    @Test
+    public void testFewErrorsFile() {
+        App classUnderTest = new App();
+        String path = "src/main/resources/fewErrors.js";
+        int expectedOutput = 5;
+        assertEquals("Checking empty file ",
+                expectedOutput,
+                classUnderTest.readJavaScript(path));
+    }
+
+    @Test
+    public void testNoErrorsFile() {
+        App classUnderTest = new App();
+        String path = "src/main/resources/noErrors.js";
+        int expectedOutput = 0;
+        assertEquals("Checking empty file ",
+                expectedOutput,
+                classUnderTest.readJavaScript(path));
+    }
+
+    @Test
+    public void testOneErrorFile() {
+        App classUnderTest = new App();
+        String path = "src/main/resources/oneError.js";
+        int expectedOutput = 1;
+        assertEquals("Checking empty file ",
+                expectedOutput,
+                classUnderTest.readJavaScript(path));
+    }
+
+
 }
