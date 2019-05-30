@@ -4,6 +4,10 @@
 package basiclibrary;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
 import static org.junit.Assert.*;
 
 public class LibraryTest {
@@ -104,6 +108,49 @@ public class LibraryTest {
                 expectedOutput,
                 libraryForTesting.twoDArray(weeklyMonthTemperatures));
 
+    }
+
+    @Test
+    public void testWeatherData(){
+        Library libraryForTesting = new Library();
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        HashSet<Integer> expectedOutput = new HashSet<>();
+        expectedOutput.add(51);
+        expectedOutput.add(67);
+        expectedOutput.add(68);
+        expectedOutput.add(69);
+        expectedOutput.add(72);
+        expectedOutput.add(63);
+
+        assertEquals("checking min max values and temperature not seen during that month ",
+                expectedOutput,
+                libraryForTesting.weatherData(weeklyMonthTemperatures));
+    }
+
+    @Test
+    public void testTally(){
+        Library libraryForTesting = new Library();
+        ArrayList<String> votes = new ArrayList<String>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String expectedOutput = "Bush";
+
+        assertEquals("Checking for maximum votes ",
+                expectedOutput,
+                libraryForTesting.tally(votes));
     }
 
 }
