@@ -46,7 +46,7 @@ public class LibraryTest {
     public void testWithoutDuplicates() {
         Library libraryForTesting = new Library();
         int [] inputArr = {1, 2, 3};
-        assertTrue("Checking to see when expected output is incorrect",
+        assertFalse("Checking to see when expected output is incorrect",
                 libraryForTesting.containsDuplicates(inputArr));
     }
 
@@ -66,7 +66,7 @@ public class LibraryTest {
         Library libraryForTesting = new Library();
         int [] inputArr = {1, 2, 3,9};
         double expectedOutput = 2.0;
-        assertEquals("Checking to see when expected output is incorrect",
+        assertNotEquals("Checking to see when expected output is incorrect",
                 expectedOutput,
                 libraryForTesting.calculateAverage(inputArr));
 
