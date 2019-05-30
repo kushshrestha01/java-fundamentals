@@ -55,7 +55,6 @@ public class Library {
                 resultArray = inputArr[i];
                 firstTime = false;
             }
-            ;
             if(currentAverage < previousAverage){
                 resultArray = inputArr[i];
                 previousAverage = currentAverage;

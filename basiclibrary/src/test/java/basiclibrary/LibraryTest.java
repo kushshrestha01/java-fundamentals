@@ -65,7 +65,7 @@ public class LibraryTest {
     public void testCalculateAverageIncorrect() {
         Library libraryForTesting = new Library();
         int [] inputArr = {1, 2, 3,9};
-        int expectedOutput = 2;
+        double expectedOutput = 2.0;
         assertEquals("Checking to see when expected output is incorrect",
                 expectedOutput,
                 libraryForTesting.calculateAverage(inputArr));
@@ -73,7 +73,7 @@ public class LibraryTest {
     }
 
     @Test
-    public void testtwoDArray(){
+    public void testTwoDArray(){
         Library libraryForTesting = new Library();
         int[][] weeklyMonthTemperatures = {
                 {66, 64, 58, 65, 71, 57, 60},
@@ -89,7 +89,7 @@ public class LibraryTest {
     }
 
     @Test
-    public void testtwoDArraySecond(){
+    public void testTwoDArraySecond(){
         Library libraryForTesting = new Library();
         int[][] weeklyMonthTemperatures = {
                 {66, 64, 58, 65, 71, 57, 60},
