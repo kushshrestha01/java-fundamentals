@@ -66,8 +66,11 @@ public class LibraryTest {
         Restaurant addRestaurant = new Restaurant("Burger King", 3, "$");
         Review addReview = new Review("good burgers", "Kush", addRestaurant, 3 );
         Review addReview2 = new Review("good burgers", "Kush", addRestaurant, 5 );
+        Review addReview3 = new Review("good burgers", "Kush", addRestaurant, 4 );
         addRestaurant.addReview(addReview);
         addRestaurant.addReview(addReview2);
+        addRestaurant.addReview(addReview3);
+        addRestaurant.addReview(addReview3);
         int expectedOutput = 4;
         assertEquals("checking for average restaurant stars",
                 expectedOutput,

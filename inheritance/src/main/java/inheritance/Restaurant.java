@@ -33,10 +33,12 @@ public class Restaurant {
 
     public ArrayList<Review> addReview(Review review) {
             reviewList.add(review);
-            if(reviewList.size() >= 1) {
-                int recentStar = review.stars;
-                this.stars = (recentStar + this.stars) / 2;
+            int recentStar = 0;
+            for (Review list:reviewList) {
+                recentStar += list.stars;
             }
+            this.stars = recentStar / reviewList.size();
+
             return reviewList;
     }
 }
