@@ -9,3 +9,6 @@ The basics directory has a Main.java file that contains Pluralize, Flipping Coin
 
 [Lab 3: Maps, File I/O, and Testing](linter/README.md)
 
+[Lab 6: Composition and Inheritance, Part 1](inheritance/README.md)
+
+
