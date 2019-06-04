@@ -4,11 +4,73 @@
 package inheritance;
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class LibraryTest {
-    @Test public void testSomeLibraryMethod() {
+    @Test
+    public void testSomeLibraryMethod() {
         Library classUnderTest = new Library();
         assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+    }
+
+    @Test
+    public void testToStringRestaurant() {
+    Restaurant testToString = new Restaurant("Burger King", 2, "$");
+    String expectedOutput = "Burger King has 2 stars and the price is $";
+    assertEquals("checking toString",
+            expectedOutput,
+            testToString.toString());
+    }
+
+    @Test
+    public void testToStringReview() {
+        Review testToString = new Review("They have delicious burgers", "Kush", 2);
+        String expectedOutput = "Review: They have delicious burgers, by Kush";
+        assertEquals("checking toString Review",
+                expectedOutput,
+                testToString.toString());
+    }
+
+    @Test
+    public void testToStringReviewWithName() {
+        Restaurant testToStringRestaurant = new Restaurant("Burger King", 2, "$");
+        Review testToString = new Review( "They have delicious burgers", "Kush", testToStringRestaurant, 2);
+
+        String expectedOutput = "Restaurant: Burger King Review: They have delicious burgers, by Kush";
+        assertEquals("checking toString Review",
+                expectedOutput,
+                testToString.toStringSecond());
+    }
+
+    @Test
+    public void testAddReview() {
+        Restaurant addRestaurant = new Restaurant("Burger King", 3, "$");
+        Review addReview = new Review("good burgers", "Kush", addRestaurant, 3 );
+        addRestaurant.addReview(addReview);
+        String expectedRestaurantName = "Burger King";
+        String expectedRestaurantReview = "good burgers";
+        assertEquals("checking restaurant names",
+                expectedRestaurantName,
+                addRestaurant.getName());
+        assertEquals("checking restaurant review",
+                expectedRestaurantReview,
+                addRestaurant.reviewList.get(0).getBody());
+        assertEquals("checking length of Review list"
+        , 1,
+                addRestaurant.reviewList.size());
+    }
+
+    @Test
+    public void testAverageStars() {
+        Restaurant addRestaurant = new Restaurant("Burger King", 3, "$");
+        Review addReview = new Review("good burgers", "Kush", addRestaurant, 3 );
+        Review addReview2 = new Review("good burgers", "Kush", addRestaurant, 5 );
+        addRestaurant.addReview(addReview);
+        addRestaurant.addReview(addReview2);
+        int expectedOutput = 4;
+        assertEquals("checking for average restaurant stars",
+                expectedOutput,
+                addRestaurant.getStars());
     }
 }
