@@ -1,6 +1,6 @@
 package inheritance;
 
-public class Review {
+public class Review{
     private String body;
     private String author;
     private String name;
@@ -10,12 +10,8 @@ public class Review {
         return body;
     }
 
-    public String getAuthor() {
+    public String getAuthor() { return author; }
 
-        return author;
-    }
-
-    public Review(){}
 
     public Review(String body, String author, int stars) {
         this.body = body;
@@ -23,10 +19,10 @@ public class Review {
         this.stars = stars;
     }
 
-    public Review(String body, String author, Restaurant restaurant, int stars){
+    public Review(String name, String body, String author, int stars){
+        this.name = name;
         this.body = body;
         this.author = author;
-        this.name = restaurant.getName();
         this.stars = stars;
     }
 

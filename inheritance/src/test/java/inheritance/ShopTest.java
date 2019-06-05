@@ -14,7 +14,18 @@ public class ShopTest {
         assertEquals("checking toString method of Shop class",
                 expectedOutput,
                 output);
-
     }
 
+    @Test
+    public void testAddReviewShop() {
+        Shop testAddReview = new Shop("Target", "Everything you want", "$$");
+        testAddReview.addReview(new Review("Target", "good store", "kush", 2 ));
+        testAddReview.addReview(new Review("Target", "good store", "kush", 2 ));
+        int expectedOutput = testAddReview.reviewList.size();
+        int output = 2;
+        assertEquals("checking the length of review list to see if review has been added for shop",
+                expectedOutput,
+                output);
+
+    }
 }
