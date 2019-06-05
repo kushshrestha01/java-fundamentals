@@ -11,4 +11,6 @@ The basics directory has a Main.java file that contains Pluralize, Flipping Coin
 
 [Lab 6: Composition and Inheritance, Part 1](inheritance/README.md)
 
+[Lab 7: Composition and Inheritance, Part 2](inheritance/README.md)
+
 
