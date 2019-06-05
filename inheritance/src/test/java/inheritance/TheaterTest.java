@@ -11,8 +11,8 @@ public class TheaterTest {
         Theater testToString = new Theater();
         testToString.addMovie("Iron Man");
         testToString.addMovie("Bat Man");
-        int expectedOutput = testToString.movieList.size();
-        int output = 2;
+        String expectedOutput = testToString.toString();
+        String output = "Iron Man";
         assertEquals("checking if movies has been added",
                 expectedOutput,
                 output);
@@ -38,6 +38,17 @@ public class TheaterTest {
         int expectedOutput = testToString.reviewList.size();
         int output = 1;
         assertEquals("checking if movies has been added",
+                expectedOutput,
+                output);
+    }
+
+    @Test
+    public void testReviewJustTheater(){
+        Theater testReview = new Theater();
+        testReview.addReview(new Review("Good Theater", "Kush", 4));
+        int expectedOutput = testReview.reviewList.size();
+        int output = 1;
+        assertEquals("checking review if the user just went for popcorn",
                 expectedOutput,
                 output);
     }

@@ -25,4 +25,7 @@ public class Theater extends ZelpBase{
         return movieList;
     }
 
+    public String toString(){
+        return String.format(movieList.get(0));
+    }
 }
