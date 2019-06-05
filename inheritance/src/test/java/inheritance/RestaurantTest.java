@@ -17,7 +17,7 @@ public class RestaurantTest {
     @Test
     public void testAddReview() {
         Restaurant addRestaurant = new Restaurant("Burger King", 3, "$");
-        Review addReview = new Review("good burgers", "Kush", addRestaurant, 3 );
+        Review addReview = new Review("Burger King", "good burgers", "Kush", 3 );
         addRestaurant.addReview(addReview);
         String expectedRestaurantName = "Burger King";
         String expectedRestaurantReview = "good burgers";
@@ -35,9 +35,9 @@ public class RestaurantTest {
     @Test
     public void testAverageStars() {
         Restaurant addRestaurant = new Restaurant("Burger King", 3, "$");
-        Review addReview = new Review("good burgers", "Kush", addRestaurant, 3 );
-        Review addReview2 = new Review("good burgers", "Kush", addRestaurant, 5 );
-        Review addReview3 = new Review("good burgers", "Kush", addRestaurant, 4 );
+        Review addReview = new Review("Burger King", "good burgers", "Kush", 3 );
+        Review addReview2 = new Review("Burger King", "good burgers", "Kush", 5  );
+        Review addReview3 = new Review("Burger King", "good burgers", "Kush", 4 );
         addRestaurant.addReview(addReview);
         addRestaurant.addReview(addReview2);
         addRestaurant.addReview(addReview3);

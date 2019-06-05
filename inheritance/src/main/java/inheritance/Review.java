@@ -1,34 +1,46 @@
 package inheritance;
 
-public class Review {
+public class Review{
     private String body;
     private String author;
     private String name;
     public int stars;
+    public String movieName;
 
     public String getBody() {
         return body;
     }
 
-    public String getAuthor() {
+    public String getAuthor() { return author; }
 
-        return author;
-    }
-
-    public Review(){}
-
+    //Method Overloading
+    //Review for someone who just went in theater for popcorn
     public Review(String body, String author, int stars) {
         this.body = body;
         this.author = author;
         this.stars = stars;
+        this.name = null;
+        this.movieName = null;
     }
 
-    public Review(String body, String author, Restaurant restaurant, int stars){
+    //Review for Restaurant or a Shop that doesn’t have to include which movie they saw!
+    public Review(String name, String body, String author, int stars){
+        this.name = name;
         this.body = body;
         this.author = author;
-        this.name = restaurant.getName();
+        this.stars = stars;
+        this.movieName = null;
+    }
+
+    //Review to hold a movie name
+    public Review(String name, String movieName, String body, String author, int stars){
+        this.name = name;
+        this.movieName = name;
+        this.body = body;
+        this.author = author;
         this.stars = stars;
     }
+
 
     public String toString() {
         return String.format("Review: " + this.body + ", by " + this.author);

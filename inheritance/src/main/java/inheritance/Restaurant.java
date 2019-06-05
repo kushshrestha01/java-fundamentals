@@ -2,35 +2,28 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Restaurant {
-    private String name;
+public class Restaurant extends ZelpBase {
     private int stars;
     private String price;
     ArrayList<Review> reviewList = new ArrayList<Review>();
 
-    public Restaurant() {}
     public Restaurant(String name, int stars, String price){
-        this.name = name;
+        super(name);
         this.stars = stars;
         this.price = price;
     }
 
-    public String getName(){
-        return name;
-    }
-
-    public int getStars() {
-        return stars;
-    }
+    public int getStars() { return stars; }
 
     public String getPrice() {
         return price;
     }
 
     public String toString() {
-        return String.format(this.name + " has " + this.stars + " stars and the price is " + this.price);
+        return String.format(this.getName() + " has " + this.stars + " stars and the price is " + this.price);
     }
 
+    @Override
     public ArrayList<Review> addReview(Review review) {
             reviewList.add(review);
             int totalStar = 0;
